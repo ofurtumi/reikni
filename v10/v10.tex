@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[icelandic]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{minted}
+
+
+\graphicspath{ {./} }
+\title{VV1 og VV2 - Stærðfræði og reiknifræði}
+\author{ttb3@hi.is}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+\section*{VV1}
+\subsection*{a)}
+\begin{align*}
+    \frac{\delta}{\delta x}(e^{xy}\log{xy})\\
+    \log{xy}(\frac{\delta}{\delta x}(e^{xy}))+e^{xy}(\frac{\delta}{\delta x}\log{xy})\\
+    e^{xy}(\frac{\delta}{\delta x}\log{xy})+y(\frac{\delta}{\delta x}(x))e^{xy}\log{xy}\\
+    e^{xy}(\frac{\delta}{\delta x}\log{xy})+1e^{xy}y\log{xy}\\
+    e^{xy}y\log{xy}+y(\frac{\delta}{\delta x}(x))\frac{e^{xy}}{xy}\\
+    e^{xy}y\log{xy}+1\frac{e^{xy}}{x}\\
+    \frac{e^{xy}(xy\log{xy}+1)}{x}
+\end{align*}
+
+\subsection*{b)}
+\begin{align*}
+    Dy((x+y^3)^5-sin(x-y))\\
+    \frac{\delta}{\delta y}((x+y^3)-sin(x-y))\\
+    \frac{\delta}{\delta y}((x+y^3)^5)-\frac{\delta}{\delta y}(sin(x-y))\\
+    (5(x+y^3)^4(\frac{\delta}{\delta y}(x+y^3))-\frac{\delta}{\delta y}(sin(x-y))\\
+    (\frac{\delta}{\delta y}(x)+\frac{\delta}{\delta y}(y^3))5(x+y^3)^4-\frac{\delta}{\delta y}(sin(x-y))\\
+    3y^25(x+y^3)^4-\frac{\delta}{\delta y}(sin(x-y))\\
+    15y^2(x+y^3)^4-(cos(x-y)(\frac{\delta}{\delta y}(x-y)))\\
+    15y^2(x+y^3)^4-cos(x-y)(-(\frac{\delta}{\delta y}(y)+\frac{\delta}{\delta y}(x)))\\
+    15y^2(x+y^3)^4+cos(x-y)
+\end{align*}
+
+\subsection*{c)}
+\begin{align*}
+    \frac{\delta}{\delta z}(\frac{log(xz)}{z^2})\\
+    log(xz)(\frac{\delta}{\delta z}(\frac{1}{z^2}))+\frac{\frac{\delta}{\delta z}(log(xz))}{z^2}\\
+    -\frac{2}{z^3}log(xz)+\frac{\frac{\delta}{\delta z}(log(xz))}{z^2}\\
+    -\frac{2log(xz)}{z^3}+\frac{\frac{\delta}{\delta z}(xz)}{xz}\frac{1}{z^2}\\
+    -\frac{2log(xz)}{z^3}+\frac{\frac{\delta}{\delta z}(xz)}{xz^3}\\
+    -\frac{2log(xz)}{z^3}+x(\frac{\delta}{\delta z}(z))\frac{1}{xz^3}\\
+    -\frac{2log(xz)}{z^3}+\frac{\frac{\delta}{\delta z}(z)}{z^3}\\
+    -\frac{2log(xz)}{z^3}+\frac{1}{z^3}\\
+    -\frac{1-2log(xz)}{z^3}
+\end{align*}
+
+\section*{VV2}
+\subsection*{a)}
+finnum stærsta mögulega formengi fallsins
+\begin{align*}
+    f(x,y)=\sqrt{x^2-5x+6}\sqrt{y^2+5y-6}\\
+    \text{það er ekki hægt að finna rót af tölu minni en 0}\\
+    \text{breytum innri föllunum í jöfnur}\\
+    x^2+6 = 5x\\
+    y^2+5y = 6\\
+    \text{þá sést greinilega að}\\
+    \{(x,y)\in\mathbb{R}^2:x^2+6\ge 5x, y^2+5y\ge6 \}
+\end{align*}
+
+\end{document}
